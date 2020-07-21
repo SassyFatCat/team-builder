@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import logo from './logo.svg';
 import './App.css';
 import TeamMember from './TeamMember'
 import Form from './Form'
@@ -40,9 +39,9 @@ return (
   <div className="App">
     <div className="tmembercontainer">
     <h1>Team Members</h1>
-      {teamMembers.map(x => {
+      {teamMembers.map((x, index) => {
         return (
-        <TeamMember details={x} />
+        <TeamMember key={index} details={x} />
         )
       })}
     </div>
