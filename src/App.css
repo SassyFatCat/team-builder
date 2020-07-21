@@ -2,6 +2,7 @@
   text-align: center;
   width: 80%;
   display: flex;
+  justify-content: space-between;
   margin: 0 auto;
 }
 
@@ -48,9 +49,26 @@
 }
 
 .tmembercontainer {
-  width: 50%;
+  width: 48%;
 }
 
 .formContainer {
-  width: 50%;
+  width: 48%;
+}
+
+.formContainer h1, .tmembercontainer h1 {
+  color: white;
+  background-color: black;
+  padding: 1% 0;
+}
+
+.form {
+  color: black;
+  border: 1px solid black;
+  font-size: 2rem;
+  padding: 2% 15%;
+
+  display: flex;
+  flex-direction: column;
+
 }
