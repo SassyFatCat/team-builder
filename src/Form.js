@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 export default function Form(props) {
-const {updateForm, updateTeamMembers, formValues} = props;
+const {updateForm, updateTeamMembers, formValues, editState, setFormValues} = props;
 
 const onChange = event => {
 const name = event.target.name;
@@ -13,6 +13,10 @@ const onSubmit = event => {
 event.preventDefault();
 updateTeamMembers()
 }
+
+useEffect(() => {
+setFormValues(editState)
+}, [editState])
 
 return (
 <form className="form" onSubmit={onSubmit}>

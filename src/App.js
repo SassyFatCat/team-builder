@@ -14,6 +14,7 @@ role: ''};
 
 const [teamMembers, setTeamMembers] = useState([sampleData]);
 const [formValues, setFormValues] = useState(initialForm);
+const [editState, setEditState] = useState(initialForm);
 
 const updateForm = (inputName, inputValue) => {
 setFormValues({
@@ -41,13 +42,13 @@ return (
     <h1>Team Members</h1>
       {teamMembers.map((x, index) => {
         return (
-        <TeamMember key={index} details={x} />
+        <TeamMember key={index} details={x} setEditState={setEditState}/>
         )
       })}
     </div>
       <div className="formContainer">
         <h1>Form</h1>
-        <Form updateForm={updateForm} updateTeamMembers={updateTeamMembers} formValues={formValues}/>
+        <Form setFormValues={setFormValues} editState={editState} updateForm={updateForm} updateTeamMembers={updateTeamMembers} formValues={formValues}/>
       </div>
   </div>
   );
